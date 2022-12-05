@@ -10,11 +10,7 @@ my %values = map {$_ => ++$number} ('a'..'z','A'..'Z');
 
 while (<>) {
     chomp;
-    ## Length returns 1 more than I'm expecting, even with chomp.
-    ## The last line was working as expected until I added a new blank line at the end of the file
-    ## Not sure why chomp isn't removing all newline characters. Maybe only specific to this OS?
-    ## In any case, I'm subtracting 1 to combat this issue, and will make sure I have a blank line at the end of my input file.
-    my $length = (length $_) - 1;
+    my $length = (length $_);
     my $half = $length / 2;
     my @letters = split(//, $_);
     my %half1;
